@@ -17,15 +17,12 @@ public class CameraManager : MonoBehaviour {
 
     protected  void Update() {
         giroscopeRotation = Input.gyro.attitude;
+        RefreshRotation();
+        RefreshZoom();
     }
 
     public void Slider_zoomRefreshed(float value) {
         zoomFactor = value;
-        RefreshZoom();
-    }
-    
-    public void OnPreRender() {
-        RefreshRotation();
         RefreshZoom();
     }
 
