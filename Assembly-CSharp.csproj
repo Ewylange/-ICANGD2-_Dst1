@@ -45,7 +45,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraManager.cs" />
+     <Compile Include="Assets\Scenes\Changement_de_scene.cs" />
      <Compile Include="Assets\Scripts\SwitchColor.cs" />
+     <Compile Include="Assets\Scripts\TouchPosition.cs" />
      <Compile Include="Assets\Scripts\androidCamera.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
