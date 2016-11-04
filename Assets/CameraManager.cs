@@ -15,8 +15,8 @@ public class CameraManager : MonoBehaviour {
         //originPosition = transform.position;
     }
 
-    protected  void Update() {
-        giroscopeRotation = Input.gyro.attitude;
+    protected void Update() {
+        transform.rotation = Input.gyro.attitude;
         RefreshRotation();
         RefreshZoom();
     }
