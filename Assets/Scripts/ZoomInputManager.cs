@@ -6,7 +6,7 @@ public class ZoomInputManager : MonoBehaviour {
     [Range(0, 1)]
     public float zoomFactor = 0f;
 
-    public float sensibility = 0.5f;
+    public float sensibility = 0.05f;
 
     float lastDist = -1;
 
@@ -27,7 +27,7 @@ public class ZoomInputManager : MonoBehaviour {
 
             float deltaDist = lastDist - dist;
 
-            zoomFactor += deltaDist * sensibility;
+            cameraManager.zoomFactor += deltaDist * sensibility;
 
             cameraManager.zoomFactor = zoomFactor;
         } else {

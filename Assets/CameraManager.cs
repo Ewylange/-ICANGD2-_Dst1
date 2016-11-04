@@ -17,7 +17,6 @@ public class CameraManager : MonoBehaviour {
 
     protected void Update() {
         transform.rotation = Input.gyro.attitude;
-        RefreshRotation();
         RefreshZoom();
     }
 
@@ -28,11 +27,8 @@ public class CameraManager : MonoBehaviour {
 
     public void RefreshZoom() {
         //transform.position = originPosition + Quaternion.LookRotation(transform.forward, Vector3.up) * Vector3.forward * zoomDistance * zoomFactor;
+        zoomFactor = Mathf.Clamp01(zoomFactor);
         Camera.main.fieldOfView = Mathf.Lerp(16, 60, zoomFactor);
-    }
-
-    public void RefreshRotation() {
-        transform.rotation = giroscopeRotation;
     }
 
 }
