@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraManager.cs" />
+     <Compile Include="Assets\Scripts\CameraManager.cs" />
+     <Compile Include="Assets\Scripts\ColorManager.cs" />
+     <Compile Include="Assets\Scripts\HSVColor.cs" />
      <Compile Include="Assets\Scripts\TouchPosition.cs" />
      <Compile Include="Assets\Scripts\ZoomInputManager.cs" />
      <Compile Include="Assets\Scripts\androidCamera.cs" />

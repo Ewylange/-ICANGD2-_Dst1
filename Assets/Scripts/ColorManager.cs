@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class ColorManager : MonoBehaviour {
 
     private WebCamTexture phoneCamera;
 
-    public Color avreageColor = Color.white;
+	public Color averageColor = Color.white;
 
     // Arch
     public Color archColor = Color.white;
+	public Image test;
 
     public bool match = false;
 
@@ -25,12 +28,12 @@ public class ColorManager : MonoBehaviour {
     protected void Update() {
         // Refresh avreage color
         if (phoneCamera.isPlaying) {
-            avreageColor = GetAvreageColorFromWebCamTexture(phoneCamera);
+			averageColor = GetAvreageColorFromWebCamTexture(phoneCamera);
         }
-
+		test.color = averageColor;
         // Check if avreage color matches arch color
         const float tolerance = 0.25f;
-        match = Vector3.Distance((HSVColor)avreageColor, (HSVColor)archColor) <= tolerance;
+		match = Vector3.Distance((HSVColor)averageColor, (HSVColor)archColor) <= tolerance;
     }
 
     public Color32 GetAvreageColorFromWebCamTexture(WebCamTexture texture) {
