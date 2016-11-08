@@ -57,6 +57,6 @@ public class ColorManager : MonoBehaviour {
         }
 
         // Return avreaged color
-        return new Color32((byte)(r / length), (byte)(g / length), (byte)(b / length), 0);
+        return new Color32((byte)(r / length), (byte)(g / length), (byte)(b / length), 1);
     }
 }
