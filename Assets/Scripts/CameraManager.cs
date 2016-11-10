@@ -13,10 +13,13 @@ public class CameraManager : MonoBehaviour {
 
     private void Awake() {
         //originPosition = transform.position;
+        Input.gyro.updateInterval = 0.01f;
+        Input.gyro.enabled = true;
     }
 
     protected void Update() {
         transform.rotation = Input.gyro.attitude;
+        Debug.Log(Input.gyro.attitude);
         RefreshZoom();
     }
 

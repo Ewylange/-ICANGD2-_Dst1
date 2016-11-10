@@ -28,9 +28,10 @@ public class ZoomInputManager : MonoBehaviour {
                 return;
             }
 
-            float deltaDist = lastDist - dist;
+            float deltaDist = dist - lastDist;
 
-            cameraManager.zoomFactor += deltaDist * sensibility;
+            zoomFactor += deltaDist * sensibility * Time.deltaTime;
+            zoomFactor = Mathf.Clamp(zoomFactor, 0, 1);
 
             cameraManager.zoomFactor = zoomFactor;
         } 
