@@ -19,6 +19,8 @@ public class CameraManager : MonoBehaviour {
 
     protected void Update() {
         transform.rotation = Input.gyro.attitude;
+        transform.Rotate(0f, 0f, 180f, Space.Self); // Swap "handedness" of quaternion from gyro.
+        transform.Rotate(90f, 180f, 0f, Space.World); // Rotate to make sense as a camera pointing out the back of your device.
         Debug.Log(Input.gyro.attitude);
         RefreshZoom();
     }

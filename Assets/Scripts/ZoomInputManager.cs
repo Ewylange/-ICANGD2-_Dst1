@@ -6,12 +6,14 @@ public class ZoomInputManager : MonoBehaviour {
     [Range(0, 1)]
     public float zoomFactor = 0f;
 
-    public float sensibility = 0.05f;
+    public float sensibility = 0.01f;
 
     float lastDist = -1;
 
 
     public CameraManager cameraManager;
+
+    public AnimationCurve zoomCurve = new AnimationCurve();
 
     void Update () 
 	{
@@ -28,12 +30,12 @@ public class ZoomInputManager : MonoBehaviour {
                 return;
             }
 
-            float deltaDist = dist - lastDist;
+            float deltaDist = lastDist - dist;
 
             zoomFactor += deltaDist * sensibility * Time.deltaTime;
             zoomFactor = Mathf.Clamp(zoomFactor, 0, 1);
 
-            cameraManager.zoomFactor = zoomFactor;
+            cameraManager.zoomFactor = zoomCurve.Evaluate(zoomFactor);
         } 
 		else 
 		{
