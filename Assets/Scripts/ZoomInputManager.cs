@@ -13,14 +13,17 @@ public class ZoomInputManager : MonoBehaviour {
 
     public CameraManager cameraManager;
 
-    void Update () {
-	    if(Input.touchCount == 2) {
+    void Update () 
+	{
+	    if(Input.touchCount == 2) 
+		{
             Touch touch0 = Input.GetTouch(0);
             Touch touch1 = Input.GetTouch(1);
 
             float dist = Vector2.Distance(touch0.position, touch1.position);
 
-            if(lastDist < 0) {
+            if(lastDist < 0) 
+			{
                 lastDist = dist;
                 return;
             }
@@ -30,7 +33,9 @@ public class ZoomInputManager : MonoBehaviour {
             cameraManager.zoomFactor += deltaDist * sensibility;
 
             cameraManager.zoomFactor = zoomFactor;
-        } else {
+        } 
+		else 
+		{
             lastDist = -1;
         }
 	}
