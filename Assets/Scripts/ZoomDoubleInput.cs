@@ -7,7 +7,7 @@ public class ZoomDoubleInput : MonoBehaviour
 	Vector3 camStart;
 
 	public float zoomDistance;
-	float acumTime;
+	float timeSinceTouch = 0.5f;
 
 	bool forward;
 	bool backward;
@@ -21,27 +21,26 @@ public class ZoomDoubleInput : MonoBehaviour
 	{
 		camForward = camStart + (transform.forward * 8);
 
-		if(Input.touchCount == 2)
-		{
-			if(Vector3.Distance(transform.position, camStart) < 0.1f)
-			{
-				forward = true;
-			}
-			if(Vector3.Distance(transform.position, camStart) < 0.1f)
-			{
-				forward = true;
-			}
-		}
+		timeSinceTouch += Time.deltaTime;
 
-		if(Input.GetKeyDown(KeyCode.Z))
+		if(Input.touchCount > 0)
 		{
-			forward = true;
+			if(Input.GetTouch(0).phase == TouchPhase.Began)
+			{
+				if(timeSinceTouch < 0.5f)
+				{
+					if(Vector3.Distance(transform.position, camStart) < 0.1f)
+					{
+						forward = true;
+					}
+					if(Vector3.Distance(transform.position, camForward) < 0.1f)
+					{
+						backward = true;
+					}
+				}
+				timeSinceTouch = 0;
+			}
 		}
-		if(Input.GetKeyDown(KeyCode.D))
-		{
-			backward = true;
-		}
-
 
 		if(forward)
 		{
