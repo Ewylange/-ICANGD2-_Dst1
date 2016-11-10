@@ -22,7 +22,8 @@ public class Changement_de_scene : MonoBehaviour
 	// Reload this level
 	public void ReloadLevel() 
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene);
+		Scene scene = SceneManager.GetActiveScene();
+		SceneManager.LoadScene(scene.name);
 //		Application.LoadLevel(Application.loadedLevel);
 	}
 
