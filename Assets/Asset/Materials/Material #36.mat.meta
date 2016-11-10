@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< 27a623e510700de25a055f078cebcab6a039c4ce
 guid: 184eefdf8bd2249cf8ed0d16bcc4512f
 timeCreated: 1478792698
+=======
+guid: 71b2b9dad2da34da59b9e381b5de0825
+timeCreated: 1478792838
+>>>>>>> Réparation chargement de scène.
 licenseType: Free
 NativeFormatImporter:
   userData: 

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 6aa6cb573df7a45bd9463f89c50e76f8
 folderAsset: yes
+<<<<<<< 27a623e510700de25a055f078cebcab6a039c4ce
 timeCreated: 1478259654
+=======
+timeCreated: 1478792837
+>>>>>>> Réparation chargement de scène.
 licenseType: Free
 DefaultImporter:
   userData: 

@@ -1,44 +1,35 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Changement_de_scene : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+public class Changement_de_scene : MonoBehaviour 
+{
+	void Update () 
+	{
 		if (Input.GetKey(KeyCode.UpArrow))
-			{
-	
-			Application.LoadLevel("Switch_scene2");
+		{
+			SceneManager.LoadScene("Switch_scene2");
+//			Application.LoadLevel("Switch_scene2");
 		}
-
-
-
-
 	}
 
-	public void LoadLevel(int level) {
-		
-		Application.LoadLevel("Game");
-	}
-
-	// Quit the game
-	public void QuitGame() {
-		Application.Quit();
+	public void LoadLevel(int level) 
+	{
+		SceneManager.LoadScene("Game");
+//		Application.LoadLevel("Game");
 	}
 
 	// Reload this level
-	public void ReloadLevel() {
-		Application.LoadLevel(Application.loadedLevel);
+	public void ReloadLevel() 
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene);
+//		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	// Go back to main menu
-	public void BackToMainMenu() {
-		Application.LoadLevel("Menu");
+	public void BackToMainMenu() 
+	{
+		SceneManager.LoadScene("Menu");
+//		Application.LoadLevel("Menu");
 	}
 }
