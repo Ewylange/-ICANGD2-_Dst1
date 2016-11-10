@@ -5,6 +5,7 @@ public class Floating : MonoBehaviour
 {
 	float rotationX;
 	float rotationY;
+	float rotationZ;
 
 	Vector3 startPosition;
 	Vector3 highPosition;
@@ -19,6 +20,7 @@ public class Floating : MonoBehaviour
 	bool moveUp;
 	bool lookUp;
 	bool lookRight;
+	bool lookForward;
 
 	public float rotationSpeed = 0.5f;
 
@@ -37,11 +39,14 @@ public class Floating : MonoBehaviour
 		moveUp = Random.value >= 0.5f;
 		lookUp = Random.value >= 0.5f;
 		lookRight = Random.value >= 0.5f;
+		lookForward = Random.value >= 0.5f;
+
 		transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + Random.Range(-0.25f, 0.25f), transform.localPosition.z);
-		transform.localRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), transform.localRotation.z);
+		transform.localRotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
 
 		rotationX = transform.localEulerAngles.x;
 		rotationY = transform.localEulerAngles.y;
+		rotationZ = transform.localEulerAngles.y;
 	}
 	
 	void Update () 
@@ -81,6 +86,7 @@ public class Floating : MonoBehaviour
 //				lookUp = !lookUp;
 //			}
 		}
+
 		if(lookRight)
 		{
 			rotationY = Mathf.MoveTowards(rotationY, rotationY + 180, rotationSpeed);
@@ -100,6 +106,25 @@ public class Floating : MonoBehaviour
 //			}
 		}
 
-		transform.localRotation = Quaternion.Euler(rotationX, rotationY, transform.localRotation.z);
+		if(lookForward)
+		{
+			rotationZ = Mathf.MoveTowards(rotationZ, rotationZ + 180, rotationSpeed);
+			//			rotationZ = Mathf.MoveTowards(rotationZ, RightRotation.z, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationZ - startRotation.z) * 0.02f)));
+			//			if(Mathf.Abs(rotationZ - RightRotation.z) < 0.1f)
+			//			{
+			//				lookForward = !lookForward;
+			//			}
+		}
+		else
+		{
+			rotationZ = Mathf.MoveTowards(rotationZ, rotationZ + 180, -rotationSpeed);
+			//			rotationY = Mathf.MoveTowards(rotationZ, LeftRotation.z, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationZ - startRotation.z) * 0.02f)));
+			//			if(Mathf.Abs(rotationZ - LeftRotation.z) < 0.1f)
+			//			{
+			//				lookForward = !lookForward;
+			//			}
+		}
+
+		transform.localRotation = Quaternion.Euler(rotationX, rotationY, rotationZ);
 	}
 }
