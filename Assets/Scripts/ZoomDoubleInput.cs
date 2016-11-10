@@ -25,20 +25,15 @@ public class ZoomDoubleInput : MonoBehaviour
 		Vector3 camZoom =  new Vector3(transform.position.x,transform.position.y, transform.position.z + zoomDistance);
 		Vector3 camDeZoom =  new Vector3(transform.position.x,transform.position.y, transform.position.z - zoomDistance);
 
-	
-
 		if(Input.GetKeyUp(KeyCode.D))
 		{
-			
 			//this.transform.Translate(Vector3.Lerp( transform.position , this.transform.position + Vector3.back , 0.4f));
 			//transform.position += new Vector3 ( 0,0, -zoomDistance);
 			transform.position = Vector3.Lerp(transform.position, camDeZoom, 1f);
-
 		}
 
 		if(Input.GetKeyUp(KeyCode.Z))
 		{
-
 			//transform.position += new Vector3 ( 0,0, zoomDistance);
 			transform.position = Vector3.Lerp(transform.position, camZoom, 1f);
 			//transform.position.z += Mathf.Lerp
