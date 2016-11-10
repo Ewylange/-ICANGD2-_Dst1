@@ -45,19 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-     <Compile Include="Assets\CameraManager.cs" />
      <Compile Include="Assets\Scenes\Changement_de_scene.cs" />
-     <Compile Include="Assets\Scripts\SwitchColor.cs" />
-=======
      <Compile Include="Assets\Scripts\CameraManager.cs" />
      <Compile Include="Assets\Scripts\ColorChannel.cs" />
      <Compile Include="Assets\Scripts\ColorManager.cs" />
      <Compile Include="Assets\Scripts\HSVColor.cs" />
      <Compile Include="Assets\Scripts\SizeLock.cs" />
->>>>>>> a7335ead74cb316efde0f61dc2c61671785181f4
+     <Compile Include="Assets\Scripts\SwitchColor.cs" />
      <Compile Include="Assets\Scripts\TouchPosition.cs" />
      <Compile Include="Assets\Scripts\WebCam.cs" />
+     <Compile Include="Assets\Scripts\ZoomDoubleInput.cs" />
      <Compile Include="Assets\Scripts\ZoomInputManager.cs" />
      <Compile Include="Assets\Scripts\androidCamera.cs" />
  <Reference Include="UnityEngine.UI">
