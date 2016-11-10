@@ -3,42 +3,73 @@ using System.Collections;
 
 public class ZoomDoubleInput : MonoBehaviour 
 {
-	
+	Vector3 camForward;
+	Vector3 camStart;
+
 	public float zoomDistance;
+	float acumTime;
 
+	bool forward;
+	bool backward;
 
-	// Use this for initialization
 	void Start () 
 	{
-	
+		camStart =  transform.position;
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
-
 	{
+		camForward = camStart + (transform.forward * 8);
 
-//			if(Input.touchCount == 2) {
-//				Touch touch0 = Input.GetTouch(0);
-//				Touch touch1 = Input.GetTouch(1);
-
-		Vector3 camZoom =  new Vector3(transform.position.x,transform.position.y, transform.position.z + zoomDistance);
-		Vector3 camDeZoom =  new Vector3(transform.position.x,transform.position.y, transform.position.z - zoomDistance);
-
-		if(Input.GetKeyUp(KeyCode.D))
+		if(Input.touchCount == 2)
 		{
-			//this.transform.Translate(Vector3.Lerp( transform.position , this.transform.position + Vector3.back , 0.4f));
-			//transform.position += new Vector3 ( 0,0, -zoomDistance);
-			transform.position = Vector3.Lerp(transform.position, camDeZoom, 1f);
+			if(Vector3.Distance(transform.position, camStart) < 0.1f)
+			{
+				forward = true;
+			}
+			if(Vector3.Distance(transform.position, camStart) < 0.1f)
+			{
+				forward = true;
+			}
 		}
 
-		if(Input.GetKeyUp(KeyCode.Z))
+		if(Input.GetKeyDown(KeyCode.Z))
 		{
-			//transform.position += new Vector3 ( 0,0, zoomDistance);
-			transform.position = Vector3.Lerp(transform.position, camZoom, 1f);
-			//transform.position.z += Mathf.Lerp
-			//this.transform.Translate(Vector3.Lerp( transform.position , -this.transform.position + Vector3.back * 0.7f, 0.7f));
+			forward = true;
+		}
+		if(Input.GetKeyDown(KeyCode.D))
+		{
+			backward = true;
 		}
 
+
+		if(forward)
+		{
+			Forward();
+		}
+		else if(backward)
+		{
+			BackWard();
+		}
+	}
+
+	void Forward()
+	{
+		if(Vector3.Distance(transform.position, camForward) < 0.1f)
+		{
+			forward = false;
+			return;
+		}
+		transform.position = Vector3.Lerp(transform.position, camForward, 0.2f);
+	}
+
+	void BackWard()
+	{
+		if(Vector3.Distance(transform.position, camStart) < 0.1f)
+		{
+			backward = false;
+			return;
+		}
+		transform.position = Vector3.Lerp(transform.position, camStart, 0.2f);
 	}
 }
