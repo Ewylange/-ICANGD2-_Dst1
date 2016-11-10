@@ -3,12 +3,13 @@ using System.Collections;
 
 public class CameraGyro : MonoBehaviour {
 
+    // Configuration
     [Header("Configuration")]
     public byte gyroscopeFps = 30;
 
     private void Awake() {
         // Setup gyroscope
-        Input.gyro.updateInterval = gyroscopeFps / (float)gyroscopeFps;
+        Input.gyro.updateInterval = 1f / (float)gyroscopeFps;
         Input.gyro.enabled = true;
     }
 

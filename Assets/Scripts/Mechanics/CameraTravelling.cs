@@ -11,7 +11,6 @@ public class CameraTravelling : MonoBehaviour {
     public float delayBetweenTapsForDoubleTap = 0.5f;
 
     // State
-    [Header("Configuration")]
     [System.NonSerialized] private Camera attachedCamera;
     [System.NonSerialized] private CameraController cameraController;
     [System.NonSerialized] private float timeSinceLastTap;
