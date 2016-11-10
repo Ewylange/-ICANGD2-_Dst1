@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\TouchDrag.cs" />
 >>>>>>> Avancé channel RGB + cubes volants.
      <Compile Include="Assets\Scripts\TouchPosition.cs" />
+     <Compile Include="Assets\Scripts\Victory.cs" />
      <Compile Include="Assets\Scripts\WebCam.cs" />
      <Compile Include="Assets\Scripts\ZoomDoubleInput.cs" />
      <Compile Include="Assets\Scripts\ZoomInputManager.cs" />

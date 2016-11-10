@@ -19,15 +19,15 @@ public class ColorChannel : MonoBehaviour
 		initialPosition = transform.localPosition;
 		if(colorChannel == "Red")
 		{
-			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.g;
+			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.b;
 		}
 		else if(colorChannel == "Green")
 		{
-			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.b;
+			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.r;
 		}
 		else if(colorChannel == "Blue")
 		{
-			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.r;
+			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.g;
 		}
 	}
 
@@ -38,7 +38,7 @@ public class ColorChannel : MonoBehaviour
 		if(colorChannel == "Red")
 		{
 			GetComponent<Renderer>().material.color = new Color(1, 1 - averageColor.r, 1 - averageColor.r, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.g) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.r) - referenceWhite) < 0.1f)
 			{
 				matching = true;
 			}
@@ -51,7 +51,7 @@ public class ColorChannel : MonoBehaviour
 		else if(colorChannel == "Green")
 		{
 			GetComponent<Renderer>().material.color = new Color(1 - averageColor.g, 1, 1 - averageColor.g, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.b) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.g) - referenceWhite) < 0.1f)
 			{
 				matching = true;
 			}
@@ -64,7 +64,7 @@ public class ColorChannel : MonoBehaviour
 		else if(colorChannel == "Blue")
 		{
 			GetComponent<Renderer>().material.color = new Color(1 - averageColor.b, 1 - averageColor.b, 1, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.r) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.b) - referenceWhite) < 0.1f)
 			{
 				matching = true;
 			}
@@ -72,6 +72,12 @@ public class ColorChannel : MonoBehaviour
 			{
 				matching = false;
 			}
+		}
+
+		if(Input.GetKey(KeyCode.Space))
+		{
+			Destroy(gameObject);
+			referenceCube.GetComponent<Reference>().Fuse();
 		}
 	}
 

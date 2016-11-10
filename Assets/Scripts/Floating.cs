@@ -20,6 +20,8 @@ public class Floating : MonoBehaviour
 	bool lookUp;
 	bool lookRight;
 
+	public float rotationSpeed = 0.5f;
+
 	void Awake () 
 	{
 		startPosition = transform.localPosition;
@@ -63,7 +65,7 @@ public class Floating : MonoBehaviour
 
 		if(lookUp)
 		{
-			rotationX = Mathf.MoveTowards(rotationX, rotationX + 180, 0.5f);
+			rotationX = Mathf.MoveTowards(rotationX, rotationX + 180, rotationSpeed);
 //			rotationX = Mathf.MoveTowards(rotationX, UpRotation.x, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationX - startRotation.x) * 0.02f)));
 //			if(Mathf.Abs(rotationX - UpRotation.x) < 0.1f)
 //			{
@@ -72,7 +74,7 @@ public class Floating : MonoBehaviour
 		}
 		else
 		{
-			rotationX = Mathf.MoveTowards(rotationX, rotationX + 180, -0.5f);
+			rotationX = Mathf.MoveTowards(rotationX, rotationX + 180, -rotationSpeed);
 //			rotationX = Mathf.MoveTowards(rotationX, DownRotation.x, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationX - startRotation.x) * 0.02f)));
 //			if(Mathf.Abs(rotationX - DownRotation.x) < 0.1f)
 //			{
@@ -81,7 +83,7 @@ public class Floating : MonoBehaviour
 		}
 		if(lookRight)
 		{
-			rotationY = Mathf.MoveTowards(rotationY, rotationY + 180, 0.5f);
+			rotationY = Mathf.MoveTowards(rotationY, rotationY + 180, rotationSpeed);
 //			rotationY = Mathf.MoveTowards(rotationY, RightRotation.y, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationY - startRotation.y) * 0.02f)));
 //			if(Mathf.Abs(rotationY - RightRotation.y) < 0.1f)
 //			{
@@ -90,7 +92,7 @@ public class Floating : MonoBehaviour
 		}
 		else
 		{
-			rotationY = Mathf.MoveTowards(rotationY, rotationY + 180, -0.5f);
+			rotationY = Mathf.MoveTowards(rotationY, rotationY + 180, -rotationSpeed);
 //			rotationY = Mathf.MoveTowards(rotationY, LeftRotation.y, 0.5f - Mathf.Clamp01((Mathf.Abs(rotationY - startRotation.y) * 0.02f)));
 //			if(Mathf.Abs(rotationY - LeftRotation.y) < 0.1f)
 //			{
