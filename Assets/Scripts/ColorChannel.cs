@@ -13,6 +13,9 @@ public class ColorChannel : MonoBehaviour
 	bool matching;
 
 	Vector3 initialPosition;
+	public AudioSource audioSource;
+	public AudioClip cancel;
+	public AudioClip error;
 
 	void Start()
 	{
@@ -83,13 +86,22 @@ public class ColorChannel : MonoBehaviour
 
 	public void EndDrag()
 	{
-		if(Vector3.Distance(transform.position, referenceCube.position) < 0.3f && matching)
+		if(Vector3.Distance(transform.position, referenceCube.position) < 0.3f)
 		{
-			Destroy(gameObject);
-			referenceCube.GetComponent<Reference>().Fuse();
+			if(matching)
+			{
+				referenceCube.GetComponent<Reference>().Fuse();
+				Destroy(gameObject);
+			}
+			else
+			{
+				audioSource.PlayOneShot(error);
+				transform.localPosition = initialPosition;
+			}
 		}
 		else
 		{
+			audioSource.PlayOneShot(cancel);
 			transform.localPosition = initialPosition;
 		}
 	}

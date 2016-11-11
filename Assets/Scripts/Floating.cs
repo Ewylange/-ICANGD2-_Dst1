@@ -8,8 +8,14 @@ public class Floating : MonoBehaviour
 	float rotationZ;
 
 	Vector3 startPosition;
-	Vector3 highPosition;
-	Vector3 lowPosition;
+	Vector3 highPosition
+	{
+		get{return new Vector3(transform.localPosition.x, transform.localPosition.y + 0.25f, transform.localPosition.z);}
+	}
+	Vector3 lowPosition
+	{
+		get{return new Vector3(transform.localPosition.x, transform.localPosition.y - 0.25f, transform.localPosition.z);}
+	}
 
 //	Vector3 startRotation;
 //	Vector3 UpRotation;
@@ -24,11 +30,11 @@ public class Floating : MonoBehaviour
 
 	public float rotationSpeed = 0.5f;
 
-	void Awake () 
+	void Start () 
 	{
 		startPosition = transform.localPosition;
-		highPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.25f, transform.localPosition.z);
-		lowPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.25f, transform.localPosition.z);
+//		highPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.25f, transform.localPosition.z);
+//		lowPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 0.25f, transform.localPosition.z);
 
 //		startRotation = transform.localRotation.eulerAngles;
 //		UpRotation = new Vector3(transform.localEulerAngles.x + 15, transform.localEulerAngles.y, transform.localEulerAngles.z);
@@ -47,6 +53,7 @@ public class Floating : MonoBehaviour
 		rotationX = transform.localEulerAngles.x;
 		rotationY = transform.localEulerAngles.y;
 		rotationZ = transform.localEulerAngles.y;
+
 	}
 	
 	void Update () 

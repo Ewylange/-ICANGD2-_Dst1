@@ -8,6 +8,9 @@ public class TouchDrag : MonoBehaviour
 	private Vector3 offset;
 	private Transform toDrag;
 
+	public AudioSource audioSource;
+	public AudioClip select;
+
 	void Update() 
 	{
 		Vector3 v3;
@@ -26,6 +29,7 @@ public class TouchDrag : MonoBehaviour
 			Ray ray = Camera.main.ScreenPointToRay(pos); 
 			if(Physics.Raycast(ray, out hit) && (hit.collider.tag == "Draggable"))
 			{
+				audioSource.PlayOneShot(select);
 				toDrag = hit.transform;
 				dist = hit.transform.position.z - Camera.main.transform.position.z;
 				v3 = new Vector3(pos.x, pos.y, dist);
