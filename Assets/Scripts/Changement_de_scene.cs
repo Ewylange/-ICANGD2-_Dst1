@@ -9,7 +9,10 @@ public class Changement_de_scene : MonoBehaviour
 
 	void Start () 
 	{
-		SceneManager.LoadScene(level2, LoadSceneMode.Additive);
+        Scene scene = SceneManager.GetSceneByName(level2);
+        if (!scene.isLoaded) {
+            SceneManager.LoadScene(level2, LoadSceneMode.Additive);
+        }
 	}
 
 	public void LoadLevel(int level) 
