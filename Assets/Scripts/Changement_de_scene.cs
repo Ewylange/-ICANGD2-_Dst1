@@ -49,7 +49,7 @@ public class Changement_de_scene : MonoBehaviour
             // Debug : clear camera child
             GameObject camera = GameObject.Find("Camera");
             for (int i = camera.transform.childCount - 1; i >= 0; --i) {
-                Destroy(camera.transform.GetChild(i));
+                Destroy(camera.transform.GetChild(i).gameObject);
             }
         }
     }
