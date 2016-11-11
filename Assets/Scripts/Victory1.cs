@@ -16,6 +16,7 @@ public class Victory1 : MonoBehaviour
 	{
 		audioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
 		fade = GameObject.Find("Fade").GetComponent<Image>();
+		fade.color = new Color(0, 0, 0, 1);
 		levelChanger = GameObject.Find("GameManager").GetComponent<Changement_de_scene>();
 	}
 

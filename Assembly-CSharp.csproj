@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Changement_de_scene.cs" />
      <Compile Include="Assets\Scripts\ColorChannel.cs" />
      <Compile Include="Assets\Scripts\ColorManager.cs" />
+     <Compile Include="Assets\Scripts\End.cs" />
      <Compile Include="Assets\Scripts\Floating.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HSVColor.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\SwitchColor.cs" />
      <Compile Include="Assets\Scripts\TouchDrag.cs" />
      <Compile Include="Assets\Scripts\TouchPosition.cs" />
+     <Compile Include="Assets\Scripts\Transparent.cs" />
      <Compile Include="Assets\Scripts\Victory1.cs" />
      <Compile Include="Assets\Scripts\Victory2.cs" />
      <Compile Include="Assets\Scripts\WebCam.cs" />

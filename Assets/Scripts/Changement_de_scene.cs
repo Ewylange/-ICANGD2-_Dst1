@@ -2,8 +2,9 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Changement_de_scene : MonoBehaviour {
-
+public class Changement_de_scene : MonoBehaviour 
+{
+//On mets en public le nom de chaque scène du jeu, ainsi que le nom de la scène de départ.
     [Header("Start Scene")]
     public string startScene;
 
@@ -25,7 +26,8 @@ public class Changement_de_scene : MonoBehaviour {
         if (unloadBeforeLoad)
             UnloadCurrentlyLoadedAdditionalScene();
         Scene scene = SceneManager.GetSceneByName(additionalSceneName);
-        if (!scene.isLoaded) {
+        if (!scene.isLoaded) 
+		{
             SceneManager.LoadScene(additionalSceneName, LoadSceneMode.Additive);
         }
         additionalLoadedScene = scene;
