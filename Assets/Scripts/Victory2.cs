@@ -13,12 +13,14 @@ public class Victory2 : MonoBehaviour
 	bool victoryStart = false;
 
 	float t;
-	private Image fade; 
+	private Image fade;
+	private Changement_de_scene levelChanger;
 
 	void Start () 
 	{
 		audioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
 		fade = GameObject.Find("Fade").GetComponent<Image>();
+		levelChanger = GameObject.Find("GameManager").GetComponent<Changement_de_scene>();
 	}
 
 	void Update () 
@@ -32,10 +34,15 @@ public class Victory2 : MonoBehaviour
 			}
 			t += Time.deltaTime;
 			fade.color = new Color(0, 0, 0, (t/3) - 1);
+			if(t > 4)
+			{
+				levelChanger.LoadEndScene();
+			}
 		}
 		else
 		{
 			fade.color = new Color(0, 0, 0, fade.color.a - (Time.deltaTime / 3));
 		}
+
 	}
 }
