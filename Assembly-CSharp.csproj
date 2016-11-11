@@ -45,36 +45,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ArcheManager.cs" />
-     <Compile Include="Assets\Scripts\CameraManager.cs" />
-     <Compile Include="Assets\Scripts\Changement_de_scene.cs" />
-     <Compile Include="Assets\Scripts\ColorChannel.cs" />
-     <Compile Include="Assets\Scripts\ColorManager.cs" />
-     <Compile Include="Assets\Scripts\End.cs" />
-     <Compile Include="Assets\Scripts\Floating.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\HSVColor.cs" />
-     <Compile Include="Assets\Scripts\Level1Manager.cs" />
-     <Compile Include="Assets\Scripts\Level2Manager.cs" />
+     <Compile Include="Assets\Scripts\Game Logic\Changement_de_scene.cs" />
+     <Compile Include="Assets\Scripts\Game Logic\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Game Logic\HSVColor.cs" />
+     <Compile Include="Assets\Scripts\Game Logic\RoomManager.cs" />
+     <Compile Include="Assets\Scripts\Legacy\CameraManager.cs" />
+     <Compile Include="Assets\Scripts\Legacy\ColorManager.cs" />
+     <Compile Include="Assets\Scripts\Legacy\SizeLock.cs" />
+     <Compile Include="Assets\Scripts\Legacy\TouchPosition.cs" />
+     <Compile Include="Assets\Scripts\Legacy\Transparent.cs" />
+     <Compile Include="Assets\Scripts\Legacy\ZoomDoubleInput.cs" />
+     <Compile Include="Assets\Scripts\Legacy\ZoomInputManager.cs" />
+     <Compile Include="Assets\Scripts\Legacy\androidCamera.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\ColorChannel.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\End.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Floating.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Level2Manager.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Reference.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Restart.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\StartTouch.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\SwitchColor.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\TouchDrag.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Victory1.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\Victory2.cs" />
+     <Compile Include="Assets\Scripts\Level Logic\WebCam.cs" />
+     <Compile Include="Assets\Scripts\Mechanics\ArcheManager.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraController.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraGyro.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraTravelling.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraZoom.cs" />
-     <Compile Include="Assets\Scripts\Reference.cs" />
-     <Compile Include="Assets\Scripts\Restart.cs" />
-     <Compile Include="Assets\Scripts\RoomManager.cs" />
-     <Compile Include="Assets\Scripts\SizeLock.cs" />
-     <Compile Include="Assets\Scripts\StartTouch.cs" />
-     <Compile Include="Assets\Scripts\SwitchColor.cs" />
-     <Compile Include="Assets\Scripts\TouchDrag.cs" />
-     <Compile Include="Assets\Scripts\TouchPosition.cs" />
-     <Compile Include="Assets\Scripts\Transparent.cs" />
-     <Compile Include="Assets\Scripts\Victory1.cs" />
-     <Compile Include="Assets\Scripts\Victory2.cs" />
-     <Compile Include="Assets\Scripts\WebCam.cs" />
-     <Compile Include="Assets\Scripts\ZoomDoubleInput.cs" />
-     <Compile Include="Assets\Scripts\ZoomInputManager.cs" />
-     <Compile Include="Assets\Scripts\androidCamera.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

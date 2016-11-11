@@ -34,7 +34,7 @@ public class Victory2 : MonoBehaviour
 				victoryStart = true;
 			}
 			t += Time.deltaTime;
-			fade.color = new Color(0, 0, 0, (t/3) - 1);
+			fade.color = new Color(0, 0, 0, (t/3));
 			if(t > 4)
 			{
 				levelChanger.LoadEndScene();
