@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Mechanics\CameraTravelling.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraZoom.cs" />
      <Compile Include="Assets\Scripts\Reference.cs" />
+     <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\SizeLock.cs" />
      <Compile Include="Assets\Scripts\StartTouch.cs" />

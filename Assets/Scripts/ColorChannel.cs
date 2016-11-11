@@ -42,7 +42,7 @@ public class ColorChannel : MonoBehaviour
 		if(colorChannel == "Red")
 		{
 			GetComponent<Renderer>().material.color = new Color(1, 1 - averageColor.r, 1 - averageColor.r, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.r) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.r) - referenceWhite) < 0.2f)
 			{
 				matching = true;
 			}
@@ -55,7 +55,7 @@ public class ColorChannel : MonoBehaviour
 		else if(colorChannel == "Green")
 		{
 			GetComponent<Renderer>().material.color = new Color(1 - averageColor.g, 1, 1 - averageColor.g, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.g) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.g) - referenceWhite) < 0.2f)
 			{
 				matching = true;
 			}
@@ -68,7 +68,7 @@ public class ColorChannel : MonoBehaviour
 		else if(colorChannel == "Blue")
 		{
 			GetComponent<Renderer>().material.color = new Color(1 - averageColor.b, 1 - averageColor.b, 1, averageColor.a);
-			if(Mathf.Abs((1 - averageColor.b) - referenceWhite) < 0.1f)
+			if(Mathf.Abs((1 - averageColor.b) - referenceWhite) < 0.2f)
 			{
 				matching = true;
 			}

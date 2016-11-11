@@ -13,7 +13,7 @@ public class Changement_de_scene : MonoBehaviour {
 	public string level2;
     public string endScene;
     
-    public System.Nullable<Scene> additionalLoadedScene = null;
+	public System.Nullable<Scene> additionalLoadedScene = new System.Nullable<Scene>();
 
     void Start () 
 	{
@@ -32,13 +32,17 @@ public class Changement_de_scene : MonoBehaviour {
     }
 
     public void UnloadCurrentlyLoadedAdditionalScene() {
-        if (additionalLoadedScene == null)
+        if (!additionalLoadedScene.HasValue)
             return;
+		if(additionalLoadedScene.Value.isLoaded != true)
+		{
+			return;
+		}
         SceneManager.UnloadScene(additionalLoadedScene.Value);
     }
 		
     public void LoadBegeningScene() {
-        LoadAdditionalScene(startScene);
+        LoadAdditionalScene(begeningScene);
     }
     public void LoadLevel1() {
         LoadAdditionalScene(level1);
