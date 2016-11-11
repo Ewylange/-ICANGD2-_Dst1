@@ -30,10 +30,13 @@ public class Victory1 : MonoBehaviour
 		{
 			t += Time.deltaTime;
 			fade.color = new Color(0, 0, 0, (t/3) - 1);
-			if(t > 4)
+			if(t >= 100)
 			{
-				levelChanger.LoadEndScene();
-			}
+
+			} else if ( t > 4) {
+                levelChanger.LoadLevel2();
+                t = 100;
+            }
 		}
 	}
 

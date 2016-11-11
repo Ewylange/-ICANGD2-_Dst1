@@ -13,34 +13,37 @@ public class Changement_de_scene : MonoBehaviour
     public string level1;
 	public string level2;
     public string endScene;
-    
-	public System.Nullable<Scene> additionalLoadedScene = new System.Nullable<Scene>();
 
-    void Start () 
-	{
-        LoadAdditionalScene(startScene);
+    public string currentlyLoadedScene;
+
+    void Start () {
+        LoadAdditionalScene(startScene, false);
     }
 
-    public void LoadAdditionalScene(string additionalSceneName, bool unloadBeforeLoad = true) 
-	{
+    public void LoadAdditionalScene(string additionalSceneName, bool unloadBeforeLoad = true) {
+        // Unload before load if necesary
         if (unloadBeforeLoad)
             UnloadCurrentlyLoadedAdditionalScene();
-        Scene scene = SceneManager.GetSceneByName(additionalSceneName);
-        if (!scene.isLoaded) 
-		{
-            SceneManager.LoadScene(additionalSceneName, LoadSceneMode.Additive);
+
+        // Check if scene is already loaded
+        if (currentlyLoadedScene == additionalSceneName) {
+            // Scene already loaded
+            return;
         }
-        additionalLoadedScene = scene;
+
+        // Load scene
+        SceneManager.LoadScene(additionalSceneName, LoadSceneMode.Additive);
+        // Remember currently loaded scene
+        currentlyLoadedScene = additionalSceneName;
     }
 
     public void UnloadCurrentlyLoadedAdditionalScene() {
-        if (!additionalLoadedScene.HasValue)
+        // Check if there is a currently loaded scene to unload
+        if (string.IsNullOrEmpty(currentlyLoadedScene)) {
             return;
-		if(additionalLoadedScene.Value.isLoaded != true)
-		{
-			return;
-		}
-        SceneManager.UnloadScene(additionalLoadedScene.Value);
+        }
+        // Unload if it can
+        SceneManager.UnloadScene(currentlyLoadedScene);
     }
 		
     public void LoadBegeningScene() {
