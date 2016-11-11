@@ -84,7 +84,7 @@ public class TouchDrag : MonoBehaviour
         if (touch.phase == TouchPhase.Began) {
             RaycastHit hit;
             Ray ray = dragCamera.ScreenPointToRay(pos);
-            LayerMask mask = LayerMask.GetMask("Flying Cube");
+            LayerMask mask = LayerMask.GetMask("Flying Cube Debug");
             if (Physics.Raycast(ray, out hit, mask) && (hit.collider.tag == "Draggable")) {
                 audioSource.PlayOneShot(select);
                 toDrag = hit.transform;
