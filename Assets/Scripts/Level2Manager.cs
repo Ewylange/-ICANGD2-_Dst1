@@ -20,6 +20,5 @@ public class Level2Manager : MonoBehaviour
 		cubeCam.transform.localPosition = Vector3.zero;
 		cubeCam.transform.localRotation = Quaternion.identity;
 		cubeCam.transform.localScale = Vector3.one;
-
 	}
 }

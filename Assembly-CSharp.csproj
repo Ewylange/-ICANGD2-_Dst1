@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Floating.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HSVColor.cs" />
+     <Compile Include="Assets\Scripts\Level1Manager.cs" />
      <Compile Include="Assets\Scripts\Level2Manager.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraController.cs" />
      <Compile Include="Assets\Scripts\Mechanics\CameraGyro.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\SwitchColor.cs" />
      <Compile Include="Assets\Scripts\TouchDrag.cs" />
      <Compile Include="Assets\Scripts\TouchPosition.cs" />
+     <Compile Include="Assets\Scripts\Victory1.cs" />
      <Compile Include="Assets\Scripts\Victory2.cs" />
      <Compile Include="Assets\Scripts\WebCam.cs" />
      <Compile Include="Assets\Scripts\ZoomDoubleInput.cs" />
