@@ -4,12 +4,12 @@ using System.Collections;
 
 public class Changement_de_scene : MonoBehaviour 
 {	
-	void Update () 
+	public string level1;
+	public string level2;
+
+	void Start () 
 	{
-		if (Input.GetKey(KeyCode.UpArrow))
-		{
-			SceneManager.LoadScene("Switch_scene2");
-		}
+		SceneManager.LoadScene(level2, LoadSceneMode.Additive);
 	}
 
 	public void LoadLevel(int level) 

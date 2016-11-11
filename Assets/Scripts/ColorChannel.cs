@@ -36,7 +36,7 @@ public class ColorChannel : MonoBehaviour
 
 	void Update() 
 	{
-		averageColor = webCam.averageColor;
+		averageColor = RoomManager.averageColor;
 
 		if(colorChannel == "Red")
 		{

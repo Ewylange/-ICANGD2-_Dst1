@@ -8,13 +8,18 @@ public class Victory2 : MonoBehaviour
 	public GameObject cube2;
 	public GameObject cube3;
 
-	public AudioSource audioSource;
+	private AudioSource audioSource;
 	public AudioClip victory;
 	bool victoryStart = false;
 
 	float t;
-	public Image fade; 
+	private Image fade; 
 
+	void Start () 
+	{
+		audioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
+		fade = GameObject.Find("Fade").GetComponent<Image>();
+	}
 
 	void Update () 
 	{
