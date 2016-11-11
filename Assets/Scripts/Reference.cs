@@ -10,6 +10,11 @@ public class Reference : MonoBehaviour
 
 	GameObject newCube;
 
+	public void Start()
+	{
+		audioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
+	}
+
 	public void Fuse()
 	{
 		newCube = Instantiate(fuseCube);

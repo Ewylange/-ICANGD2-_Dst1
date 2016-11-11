@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ColorChannel : MonoBehaviour 
 {
-	public WebCam webCam;
 	Color averageColor;
 
 	public string colorChannel;
@@ -20,6 +19,8 @@ public class ColorChannel : MonoBehaviour
 	void Start()
 	{
 		initialPosition = transform.localPosition;
+		audioSource = GameObject.Find("SoundManager").GetComponent<AudioSource>();
+
 		if(colorChannel == "Red")
 		{
 			referenceWhite = referenceCube.GetComponent<Renderer>().material.color.b;
