@@ -44,6 +44,14 @@ public class Changement_de_scene : MonoBehaviour
         }
         // Unload if it can
         SceneManager.UnloadScene(currentlyLoadedScene);
+
+        if(currentlyLoadedScene == level2) {
+            // Debug : clear camera child
+            GameObject camera = GameObject.Find("Camera");
+            for (int i = camera.transform.childCount - 1; i >= 0; --i) {
+                Destroy(camera.transform.GetChild(i));
+            }
+        }
     }
 		
     public void LoadBegeningScene() {
