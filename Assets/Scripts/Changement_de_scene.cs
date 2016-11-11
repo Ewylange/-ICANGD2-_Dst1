@@ -2,32 +2,51 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Changement_de_scene : MonoBehaviour 
-{	
-	public string level1;
+public class Changement_de_scene : MonoBehaviour {
+
+    [Header("Start Scene")]
+    public string startScene;
+
+    [Header("Scenes")]
+    public string begeningScene;
+    public string level1;
 	public string level2;
+    public string endScene;
+    
+    public System.Nullable<Scene> additionalLoadedScene = null;
 
-	void Start () 
-	{
-        Scene scene = SceneManager.GetSceneByName(level2);
+    void Start () {
+        LoadAdditionalScene(startScene);
+    }
+
+    public void LoadAdditionalScene(string additionalSceneName, bool unloadBeforeLoad = true) {
+        if (unloadBeforeLoad)
+            UnloadCurrentlyLoadedAdditionalScene();
+        Scene scene = SceneManager.GetSceneByName(additionalSceneName);
         if (!scene.isLoaded) {
-            SceneManager.LoadScene(level2, LoadSceneMode.Additive);
+            SceneManager.LoadScene(additionalSceneName, LoadSceneMode.Additive);
         }
-	}
+        additionalLoadedScene = scene;
+    }
 
-	public void LoadLevel(int level) 
-	{
-		SceneManager.LoadScene("Game");
-	}
+    public void UnloadCurrentlyLoadedAdditionalScene() {
+        if (additionalLoadedScene == null)
+            return;
+        SceneManager.UnloadScene(additionalLoadedScene.Value);
+    }
 
-	public void ReloadLevel() 
-	{
-		Scene scene = SceneManager.GetActiveScene();
-		SceneManager.LoadScene(scene.name);
-	}
+    // Helpers
 
-	public void BackToMainMenu() 
-	{
-		SceneManager.LoadScene("Menu");
-	}
+    public void LoadBegeningScene() {
+        LoadAdditionalScene(startScene);
+    }
+    public void LoadLevel1() {
+        LoadAdditionalScene(level1);
+    }
+    public void LoadLevel2() {
+        LoadAdditionalScene(level2);
+    }
+    public void LoadEndScene() {
+        LoadAdditionalScene(endScene);
+    }
 }
