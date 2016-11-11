@@ -85,20 +85,20 @@ public class TouchDrag : MonoBehaviour
             RaycastHit hit;
             Ray ray = dragCamera.ScreenPointToRay(pos);
             LayerMask mask = LayerMask.GetMask("Flying Cube Debug");
-            if (Physics.Raycast(ray, out hit, mask) && (hit.collider.tag == "Draggable")) {
+            if (Physics.Raycast(ray, out hit, maxDistance: 15f, layerMask: mask) && (hit.collider.tag == "Draggable")) {
                 audioSource.PlayOneShot(select);
                 toDrag = hit.transform;
-                dist = hit.transform.position.z - dragCamera.transform.position.z;
+                dist = hit.transform.localPosition.z - dragCamera.transform.localPosition.z;
                 v3 = new Vector3(pos.x, pos.y, dist);
                 v3 = dragCamera.ScreenToWorldPoint(v3);
-                offset = toDrag.position - v3;
+                offset = toDrag.localPosition - v3;
                 dragging = true;
             }
         }
         if (dragging && touch.phase == TouchPhase.Moved) {
             v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
             v3 = dragCamera.ScreenToWorldPoint(v3);
-            toDrag.position = v3 + offset;
+            toDrag.localPosition = v3 + offset;
         }
         if (dragging && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)) {
             dragging = false;
