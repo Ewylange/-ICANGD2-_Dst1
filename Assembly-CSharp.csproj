@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Reference.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\SizeLock.cs" />
+     <Compile Include="Assets\Scripts\StartTouch.cs" />
      <Compile Include="Assets\Scripts\SwitchColor.cs" />
      <Compile Include="Assets\Scripts\TouchDrag.cs" />
      <Compile Include="Assets\Scripts\TouchPosition.cs" />

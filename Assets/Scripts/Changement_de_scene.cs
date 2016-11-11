@@ -15,11 +15,13 @@ public class Changement_de_scene : MonoBehaviour {
     
     public System.Nullable<Scene> additionalLoadedScene = null;
 
-    void Start () {
+    void Start () 
+	{
         LoadAdditionalScene(startScene);
     }
 
-    public void LoadAdditionalScene(string additionalSceneName, bool unloadBeforeLoad = true) {
+    public void LoadAdditionalScene(string additionalSceneName, bool unloadBeforeLoad = true) 
+	{
         if (unloadBeforeLoad)
             UnloadCurrentlyLoadedAdditionalScene();
         Scene scene = SceneManager.GetSceneByName(additionalSceneName);
@@ -34,9 +36,7 @@ public class Changement_de_scene : MonoBehaviour {
             return;
         SceneManager.UnloadScene(additionalLoadedScene.Value);
     }
-
-    // Helpers
-
+		
     public void LoadBegeningScene() {
         LoadAdditionalScene(startScene);
     }
