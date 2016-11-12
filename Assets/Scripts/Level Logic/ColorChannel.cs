@@ -87,7 +87,7 @@ public class ColorChannel : MonoBehaviour
 
 	public void EndDrag()
 	{
-		if(Vector3.Distance(transform.position, referenceCube.position) < 0.3f)
+		if(Vector3.Distance(transform.position, referenceCube.position) < 1f)
 		{
 			if(matching)
 			{
